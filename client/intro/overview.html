@@ -1,0 +1,125 @@
+{{}}
+<h1 class="display-4">{{data.needs.title}}</h1>
+
+<ul class="nav nav-tabs">
+	<li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" role="tab" href="#{{data.needs.stitle}}" target="_self">{{data.needs.stitle}}</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" role="tab" href="#{{data.focusarea.stitle}}" target="_self">{{data.focusarea.stitle}}</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" role="tab" href="#{{data.product.stitle}}" target="_self">{{data.product.stitle}}</a>
+    </li>
+	<li class="nav-item">
+        <a class="nav-link" data-toggle="tab" role="tab" href="#{{data.components.stitle}}" target="_self">{{data.components.stitle}}</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+
+	<div class="tab-pane active" id="{{data.needs.stitle}}" role="tabpanel" target="_self">
+		<!-- Start Overview -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block">
+					<h4 class="card-title">{{data.needs.title}}</h4>					
+					<div ng-repeat="item in data.needs.comment">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>        
+			</div>
+		</div>
+		<!-- End Overview -->
+		<!-- Start Image -->
+		<div class="card card-block">
+			<div class="col-sm-12">
+				<div class="col-sm-2"></div>
+					<div class="col-sm-8">
+						<img class="w-100" src="/{{data.needs.image}}" alt="{{data.needs.title}}">
+					</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+		<!-- End Image -->
+	</div>
+	
+	<div class="tab-pane" id="{{data.focusarea.stitle}}" role="tabpanel" target="_self">
+		<!-- Start Overview -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block">
+					<h4 class="card-title">{{data.focusarea.title}}</h4>					
+					<div ng-repeat="item in data.focusarea.comment">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>        
+			</div>
+		</div>
+		<!-- End Overview -->
+		<!-- Start Image -->
+		<div class="card card-block">
+			<div class="col-sm-12">
+				<div class="col-sm-2"></div>
+					<div class="col-sm-8">
+						<img class="w-100" src="/{{data.focusarea.image}}" alt="{{data.focusarea.title}}">
+					</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+		<!-- End Image -->
+	</div>
+	
+	<div class="tab-pane" id="{{data.product.stitle}}" role="tabpanel" target="_self">
+		<!-- Start Overview -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block">
+					<h4 class="card-title">{{data.product.title}}</h4>					
+					<div ng-repeat="item in data.product.comment">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>        
+			</div>
+		</div>
+		<!-- End Overview -->
+		<!-- Start Image -->
+		<div class="card card-block">
+			<div class="col-sm-12">
+				<div class="col-sm-2"></div>
+					<div class="col-sm-8">
+						<img class="w-100" src="/{{data.product.image}}" alt="{{data.product.title}}">
+					</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+		<!-- End Image -->
+	</div>
+	
+	<div class="tab-pane" id="{{data.components.stitle}}" role="tabpanel" target="_self">
+		<!-- Start Overview -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block">
+					<h4 class="card-title">{{data.components.title}}</h4>					
+					<div ng-repeat="item in data.components.comment">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>        
+			</div>
+		</div>
+		<!-- End Overview -->
+		<!-- Start Image -->
+		<div class="card card-block">
+			<div class="col-sm-12">
+				<div class="col-sm-2"></div>
+					<div class="col-sm-8">
+						<img class="w-100" src="/{{data.components.image}}" alt="{{data.components.title}}">
+					</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+		<!-- End Image -->
+	</div>
+
+</div>

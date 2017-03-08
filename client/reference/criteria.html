@@ -1,0 +1,25 @@
+{{}}
+<h1 class="display-4">{{data.gen.title}}</h1>
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="card card-block">
+			<h4 class="card-title">{{data.gen.title}}</h4>
+				<div ng-repeat="txt in data.gen.comment">
+					<p><span class="card-text" ng-bind-html="txt"></span><p>
+				</div>
+			
+				<div ng-repeat="item in data.items">
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="card card-block">
+								<h4 class="card-title">{{item.title}}</h4>
+								<div ng-repeat="txt in item.comment">
+									<p><span class="card-text" ng-bind-html="txt"></span><p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

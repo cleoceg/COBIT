@@ -1,0 +1,321 @@
+{{}}
+<h1 class="display-4">{{data.gen.code}} - {{data.gen.title}}</h1>
+
+<ul class="nav nav-tabs">
+	<li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" role="tab" href="#gen" target="_self">Overview</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" role="tab" href="#areas" target="_self">Areas</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" role="tab" href="#controls" target="_self">Controls</a>
+    </li>
+	<li class="nav-item">
+        <a class="nav-link" data-toggle="tab" role="tab" href="#io" target="_self">Input/Output</a>
+    </li>
+	<li class="nav-item">
+        <a class="nav-link" data-toggle="tab" role="tab" href="#raci" target="_self">RACI</a>
+    </li>
+	<li class="nav-item">
+        <a class="nav-link" data-toggle="tab" role="tab" href="#gm" target="_self">Goals/Metrics</a>
+    </li>
+	<li class="nav-item">
+        <a class="nav-link" data-toggle="tab" role="tab" href="#cmmi" target="_self">CMMI</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+
+    <div class="tab-pane active" id="gen" role="tabpanel" target="_self">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block mt-1 mb-1">
+					<h4 class="card-title">{{data.gen.title}}</h4>
+					<div ng-repeat="item in data.gen.comment">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- control -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block mt-1 mb-1">
+					<div ng-repeat="item in data.meta.control">
+						<b><p><span class="card-text" ng-bind-html="item"></span><p></b>
+					</div>
+					<div ng-repeat="item in data.gen.control">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>        
+			</div>
+		</div>
+		<!-- satisfy -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block mt-1 mb-1">
+					<div ng-repeat="item in data.meta.satisfy">
+						<b><p><span class="card-text" ng-bind-html="item"></span><p></b>
+					</div>
+					<div ng-repeat="item in data.gen.satisfy">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>        
+			</div>
+		</div>
+		<!-- focusing -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block mt-1 mb-1">
+					<div ng-repeat="item in data.meta.focusing">
+						<b><p><span class="card-text" ng-bind-html="item"></span><p></b>
+					</div>
+					<div ng-repeat="item in data.gen.focusing">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>        
+			</div>
+		</div>
+		<!-- achieved -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block mt-1 mb-1">
+					<div ng-repeat="item in data.meta.achieved">
+						<b><p><span class="card-text" ng-bind-html="item"></span><p></b>
+					</div>
+					<div ng-repeat="item in data.gen.achieved">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>        
+			</div>
+		</div>
+		<!-- measured -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block mt-1 mb-1">
+					<div ng-repeat="item in data.meta.measured">
+						<b><p><span class="card-text" ng-bind-html="item"></span><p></b>
+					</div>
+					<div ng-repeat="item in data.gen.measured">
+						<p><span class="card-text" ng-bind-html="item"></span><p>
+					</div>
+				</div>        
+			</div>
+		</div>
+    </div>
+	
+    <div class="tab-pane" id="areas" role="tabpanel" target="_self">
+		<!-- Crieria -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block mt-1 mb-1">
+					<h4 class="card-title">Criteria</h4>
+					<div ng-repeat="item in data.criteria">
+						<span ng-if="data.crit.criteria[$index] !=''">
+						<p><span class="card-text" ng-bind-html="item.title"></span>: <b>{{data.crit.criteria[$index]}}</b><p>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Governance -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block mt-1 mb-1">
+					<h4 class="card-title">Governance</h4>
+					<div ng-repeat="item in data.governance">
+						<span ng-if="data.crit.governance[$index] !=''">
+						<p><span class="card-text" ng-bind-html="item.title"></span>: <b>{{data.crit.governance[$index]}}</b><p>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Resource -->
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="card card-block mt-1 mb-1">
+					<h4 class="card-title">Resources</h4>
+					<div ng-repeat="item in data.resources">
+						<span ng-if="data.crit.resources[$index] =='1'">
+						<p><span class="card-text" ng-bind-html="item.title"></span><p>
+						</span>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	
+    <div class="tab-pane" id="controls" role="tabpanel" target="_self">
+		<div ng-repeat="ctrl in data.ctrl">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card card-block mt-1 mb-1">
+						<h4 class="card-title">{{ctrl.proc}}.{{ctrl.code}} - {{ctrl.title}}</h4>
+						<div ng-repeat="item in ctrl.comment">
+							<p><span class="card-text" ng-bind-html="item"></span><p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+	
+	<div class="tab-pane" id="io" role="tabpanel" target="_self">
+		<div class="row">
+			<!-- Inputs -->
+			<div class="col-sm-6">
+				<div class="card card-block">
+					<h4 class="card-title">Inputs</h4>
+					<table class="table table-hover">
+						<thead></thead>
+						<tbody>
+							<tr ng-repeat="row in data.input.inputs">
+								<td ng-repeat="item in row">
+									<span ng-bind-html="item"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- Outputs -->
+			<div class="col-sm-6">
+				<div class="card card-block">
+					<h4 class="card-title">Outputs</h4>
+					<table class="table table-hover">
+						<thead></thead>
+						<tbody>
+							<tr ng-repeat="row in data.output.outputs">
+								<td ng-repeat="item in row">
+									<span ng-bind-html="item"></span>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tab-pane" id="raci" role="tabpanel" target="_self">
+		<!-- Start table -->
+		<div class="card card-block">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th></th>
+						<th ng-repeat="head in data.raci.functions">
+							{{head}}
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+					<tr ng-repeat="line in data.raci.activities" >
+						<td>{{line.ac}}</td>
+						<td ng-repeat="item in line.raci">
+							<span ng-bind-html="item.it"></span>
+						</td>
+						</span>
+					</tr>
+				</tbody>
+			</table>
+			A <b>RACI</b> chart identifies who is <b>R</b>esponsible, <b>A</b>ccountable, <b>C</b>onsulted and/or <b>I</b>nformed.
+		</div>
+		<!-- End table -->
+	</div>
+	
+	<div class="tab-pane" id="gm" role="tabpanel" target="_self">
+		<div class="row">
+			<div class="card card-block">
+				<div class="card card-block bg-faded">
+					<h4 class="card-title"><center>Goals</center></h4>
+				</div>
+				<div class="row">
+					<!-- IT -->
+					<div class="col-sm-4">
+						<div class="card card-block">
+							<h4 class="card-title">IT</h4>
+							<div ng-repeat="item in data.goals[0].comment">
+								<p><span class="card-text" ng-bind-html="item"></span><p>
+							</div>
+						</div>
+					</div>
+					<!-- Process -->
+					<div class="col-sm-4">
+						<div class="card card-block">
+							<h4 class="card-title">Process</h4>
+							<div ng-repeat="item in data.goals[1].comment">
+								<p><span class="card-text" ng-bind-html="item"></span><p>
+							</div>
+						</div>
+					</div>
+					<!-- Activities -->
+					<div class="col-sm-4">
+						<div class="card card-block">
+							<h4 class="card-title">Activities</h4>
+							<div ng-repeat="item in data.goals[2].comment">
+								<p><span class="card-text" ng-bind-html="item"></span><p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="card card-block">
+				<div class="card card-block bg-faded">
+					<h4 class="card-title"><center>Metrics</center></h4>
+				</div>
+				<div class="row">
+					<!-- IT -->
+					<div class="col-sm-4">
+						<div class="card card-block">
+							<h4 class="card-title">IT</h4>
+							<div ng-repeat="item in data.metrics[0].comment">
+								<p><span class="card-text" ng-bind-html="item"></span><p>
+							</div>
+						</div>
+					</div>
+					<!-- Process -->
+					<div class="col-sm-4">
+						<div class="card card-block">
+							<h4 class="card-title">Process</h4>
+							<div ng-repeat="item in data.metrics[1].comment">
+								<p><span class="card-text" ng-bind-html="item"></span><p>
+							</div>
+						</div>
+					</div>
+					<!-- Activities -->
+					<div class="col-sm-4">
+						<div class="card card-block">
+							<h4 class="card-title">Activities</h4>
+							<div ng-repeat="item in data.metrics[2].comment">
+								<p><span class="card-text" ng-bind-html="item"></span><p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="tab-pane" id="cmmi" role="tabpanel" target="_self">
+		<div ng-repeat="ctrl in data.cmmi">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="card card-block">
+						<h4 class="card-title">{{ctrl.title}}</h4>
+						<div ng-repeat="item in ctrl.comment">
+							<p><span class="card-text" ng-bind-html="item"></span><p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
